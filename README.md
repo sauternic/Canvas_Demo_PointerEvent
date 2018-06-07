@@ -1,8 +1,10 @@
 # Canvas Demo PointerEvent
 
+## Einfaches Zeichnen Programm
+
 **Das Pointer Event ist Genial! :)**
 
-Mit ihm läuft das Maus und das Touch Event in einem!
+Mit ihm läuft das Maus und das Touch Event in einem!  
 Zudem läuft es auf allen wichtigen Browsern!!! :))))
 
 Siehe im Code wie es gebraucht wird:
@@ -18,9 +20,12 @@ canvas1.addEventListener('pointermove', handlerPointermove);
 ```
 
 ## Sehr Wichtig!
+
 CSS Eigenschaft für Canvas auf:  
-`touch-action: none;`  
-Damit Canvas nicht Scrollt!
+```CSS
+/*Damit Canvas nicht Scrollt!*/
+touch-action: none;
+```
 
 
 # [Vorschau](https://htmlpreview.github.io/?https://github.com/sauternic/Canvas_Demo_PointerEvent/blob/master/canvas_Zeichnen_Maus_und_Touch.html)
