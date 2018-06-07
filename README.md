@@ -18,12 +18,12 @@ canvas1.addEventListener('pointermove', handlerPointermove);
 ```
 
 ## Sehr Wichtig!
-CSS Eigenschaft für Canvas auf:
+CSS Eigenschaft für Canvas auf:  
 `touch-action: none;`  
 Damit Canvas nicht Scrollt!
 
 
-[# Vorschau](https://htmlpreview.github.io/?https://github.com/sauternic/Canvas_Demo_PointerEvent/blob/master/canvas_Zeichnen_Maus_und_Touch.html)
+# [Vorschau](https://htmlpreview.github.io/?https://github.com/sauternic/Canvas_Demo_PointerEvent/blob/master/canvas_Zeichnen_Maus_und_Touch.html)
 ### läuft auf:
 - IE
 - Edge
