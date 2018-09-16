@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #canvas1 {
+            background-color: aqua;
+            /*Das Canvas beim zeichnen nicht scrollt*/
+            touch-action: none;
+        }
+    </style>
+    <script>    
+        'use strict';
+        window.onerror = function (e) { alert('Meine Fehlermeldung!: ' + e) };
+        window.onload = function () {
+
+            //Gib Zeichenfläche
+            var c = canvas1.getContext('2d');
+
+            //Style für Striche
+            c.strokeStyle = "#FF0000";
+            c.lineWidth = 20;
+
+            //Zum einmaligen Ansetzen des Stiftes
+            var flag = true;
+
+
+            //Pointer Events Abfangen
+            canvas1.addEventListener('pointerup', handlerPointerup);
+            canvas1.addEventListener('pointerdown', handlerPointerdown);
+            canvas1.addEventListener('pointermove', handlerPointermove);
+
+
+            //Pointer Handler +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            function handlerPointerup(e) {
+                flag = true;
+            }
+            function handlerPointerdown(e) {
+                c.closePath();
+            }
+            function handlerPointermove(e) {
+                if (e.buttons == 1) {
+                    zeichnen(e.offsetX, e.offsetY)
+                }
+            }
+            //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+            function zeichnen(x, y) {
+                if (flag) {
+                    //Stift Ansetzen
+                    c.beginPath();
+                    c.moveTo(x, y);
+                    flag = false;
+                } else {
+                    //Zeichnen
+                    c.lineTo(x, y);
+                    c.stroke();
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <canvas style="margin:50px" id="canvas1" height="800" width="1700"></canvas>
+
+</body>
+
+</html>
